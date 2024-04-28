@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/alltorestaport',
-                element:<Privateroute><Alltorestsport></Alltorestsport></Privateroute>
+                element:<Alltorestsport></Alltorestsport>
             }
         ]
     }
