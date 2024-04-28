@@ -1,0 +1,91 @@
+
+.slider2{
+    
+    background: url('https://i.pinimg.com/564x/6b/5b/59/6b5b590e20bd400d9c266a59802e72f5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+}
+.slider3{
+    
+    background: url('https://images.pexels.com/photos/6466302/pexels-photo-6466302.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+}
+.slider4{
+    
+    background: url('https://cdn.britannica.com/87/93987-050-779DFE3F/Boats-harbour-Marcel-Cove-Lesser-Antilles-Saint-Martin.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+    border-radius: 10px;
+}
+
+ .slider5{
+    
+    background: url('https://media.nomadicmatt.com/2019/borobudur1a.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+}
+.slider6{
+    
+    background: url('https://live.staticflickr.com/8240/8592434717_72c0b3b6d0_h.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+}
+.slider7{
+    
+    background: url('https://www.trailsofindochina.com/wp-content/uploads/2018/04/Bangkok_header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    border-radius: 10px;
+
+}
+.slider1{
+    
+    background: url('https://miro.medium.com/v2/resize:fit:750/1*818MWPvTflY9UyI12aI_ng.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+    border-radius: 10px;
+
+}
+.slider8{
+    
+    background: url('https://images.pexels.com/photos/5490830/pexels-photo-5490830.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+
+} 
+
+.shadow{
+    box-shadow: 1px 1px 10px;
+}
+
+/* .hover:hover{
+    transition: 2s;
+    z-index: 999;
+    border: 3px solid green;
+    background: #fff;
+} */
+.transition{
+    transition: .5s;
+}
