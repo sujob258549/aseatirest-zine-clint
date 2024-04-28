@@ -32,11 +32,11 @@ const Mylist = () => {
         <div className="w-[90%] mx-auto">
 
             <div className="py-10 md:py-16 lg:py-20">
-                <h2 className="text-xl md:text-5xl text-center font-bold">Tourists Spots section </h2>
+                <h2 className="text-xl md:text-5xl text-center font-bold">My torest add list page</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 md:py-16 ">
                     {
                         userTorestUserAdds.map(torestZone => (
-                            <div data-aos="fade-down" data-aos-duration="5000" key={torestZone.id} className='border-2 transition p-5
+                            <div data-aos="fade-down" data-aos-duration="5000" key={torestZone.id} className='border-2 transition p-5 flex flex-col
                      shadow  rounded-md hover'>
 
                                 <h2 className='text-xl px-5 font-semibold'>{torestZone.estate_title}</h2>
@@ -60,8 +60,10 @@ const Mylist = () => {
                                         <p>{torestZone.location}</p>
                                     </div>
                                 </div>
-                                <div className="flex justify-end mr-5 mb-10">
+                                <div>
+                                <div className="flex justify-end mr-5 flex-grow">
                                     <Link to={`/detail/${torestZone._id}`} className="btn w-40   text-right text-white bg-[#400f0fd9] flex items-center hover:text-black"><TbDeviceIpadStar className="text-xl font-bold"></TbDeviceIpadStar> Vew detail</Link>
+                                </div>
                                 </div>
 
                             </div>
