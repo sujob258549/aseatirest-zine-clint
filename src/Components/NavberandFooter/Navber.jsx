@@ -32,6 +32,7 @@ const Navber = () => {
         <NavLink to={'/'}>Home</NavLink>
         <NavLink to={'/alltorestaport'}>All Tourists Spot</NavLink>
         <NavLink to={'/addtorest'}>Add Tourists Spot</NavLink>
+        <NavLink to={'/mylist'}>My List Page</NavLink>
 
 
     </>

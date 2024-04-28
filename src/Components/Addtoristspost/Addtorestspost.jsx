@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { CreatAuthContext } from './../Firebase/AuthContext';
 
 
 const Addtorestspost = () => {
+
+    const {user} = useContext(CreatAuthContext)
     const navigate = useNavigate()
     const handelSubmitCofi = e => {
         e.preventDefault();
@@ -60,13 +64,13 @@ const Addtorestspost = () => {
                                         <label className="label">
                                             <span className="label-text">User Name</span>
                                         </label>
-                                        <input type="text" name="name" placeholder="User Name" className="input input-bordered" required />
+                                        <input type="text" defaultValue={user?.displayName} name="name" placeholder="User Name" className="input input-bordered" required />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">User Email</span>
                                         </label>
-                                        <input type="text" name="email" placeholder="Enter User Email" className="input input-bordered" required />
+                                        <input type="text" defaultValue={user.email} name="email" placeholder="Enter User Email" className="input input-bordered" required />
                                     </div>
                                 </div>
                                 <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5 mt-5">

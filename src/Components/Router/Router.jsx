@@ -8,6 +8,7 @@ import Addtorestspost from "../Addtoristspost/Addtorestspost";
 import Privateroute from "../Privateroute/Privateroute";
 import Alltorestsport from "../Alltorestsport/Alltorestsport";
 import TorestDetail from "../Alltorestsport/TorestDetail";
+import Mylist from "../Mylistpage/Mylist";
 
 
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path:'/addtorest',
                 element:<Privateroute><Addtorestspost></Addtorestspost></Privateroute>
+            },
+            {
+                path:'/mylist',
+                element:<Privateroute><Mylist></Mylist></Privateroute>
             },
             {
                 path:'/detail/:id',

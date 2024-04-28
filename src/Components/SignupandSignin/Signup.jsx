@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
 
-    const { creatUser } = useContext(CreatAuthContext);
+    const { creatUser, upadateprofile } = useContext(CreatAuthContext);
     const [shoandHideIcone, setShoandHideIcone] = useState(false)
     const [signupError, setsignupError] = useState('');
     const [successSignIn, setsuccessSignIn] = useState('')
@@ -41,14 +41,15 @@ const Signup = () => {
         console.log(name, email, photourl, password, conframpassowrd, checked);
 
         creatUser(email, password)
-        .then(result => {
-            console.log(result)
-            toast.success('Seccess creat Your Acout Plese Logine Button click')
-        })
-        .catch(error => {
-            console.log(error)
-            toast.error('email-already-in-use')
-        })
+            .then(result => {
+                console.log(result)
+                toast.success('Seccess creat Your Acout Plese Logine Button click')
+                upadateprofile(name, photourl)
+            })
+            .catch(error => {
+                console.log(error)
+                toast.error('email-already-in-use')
+            })
 
 
     }
@@ -58,7 +59,6 @@ const Signup = () => {
             <div className="image2">
                 <div className="py-10 mx-auto max-w-[90%]">
 
-
                     <div className="card shadow shrink-0 w-full md:w-[50%] bg-[#ffffff4e]   mx-auto my-10" data-aos="zoom-in" data-aos-duration="5500">
                         <h1 className="text-[35px] font-bold text-center pt-10">Register your account</h1>
                         <form className="card-body" onSubmit={handelsubmitRegiste}>
@@ -66,7 +66,7 @@ const Signup = () => {
                                 <label className="label">
                                     <span className="label-text text-xl font-semibold">Your Name</span>
                                 </label>
-                                <input type="text" placeholder="Enter your name" name="name" className="input input-bordered" required />
+                                <input type="text"  placeholder="Enter your name" name="name" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
