@@ -1,13 +1,14 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 import { CreatAuthContext } from './../Firebase/AuthContext';
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
-const Addtorestspost = () => {
+const Update = () => {
 
-    const {user} = useContext(CreatAuthContext)
+    const modifayData = useLoaderData()
     const navigate = useNavigate()
+    const { user } = useContext(CreatAuthContext)
     const handelSubmitCofi = e => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -21,30 +22,28 @@ const Addtorestspost = () => {
         const totavisitorsperyear = e.target.totavisitorsperyear.value;
         const photourl = e.target.photourl.value;
         const textArea = e.target.text_area.value;
-        const torestSport = { name, email,Touristsspotname, countryname, location,average_cost,seasonality,treveltime,totavisitorsperyear,photourl,textArea }
-        console.log(torestSport)
+        const torestSport = { name, email, Touristsspotname, countryname, location, average_cost, seasonality, treveltime, totavisitorsperyear, photourl, textArea }
 
-        fetch('http://localhost:3000/torestplase', {
-            method: 'POST',
+        fetch(`http://localhost:3000/torestplase/${modifayData._id}`, {
+            method: "PUT",
             headers: {
-                'content-type': 'application/json'
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(torestSport)
+
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.insertedId) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success...",
-                        text: "user coffee create success",
-                        footer: '<a href="/">You add  success</a>'
-                    });
-                    navigate('/');
-
-                }
             })
+
+        Swal.fire({
+            icon: "success",
+            title: "Update Success...",
+            text: "Update coffee create success",
+            footer: '<a href="#"> Update add  success</a>'
+        });
+        navigate('/mylist')
 
     }
     return (
@@ -78,27 +77,27 @@ const Addtorestspost = () => {
                                         <label className="label">
                                             <span className="label-text">Tourists spot name</span>
                                         </label>
-                                        <input type="text" name="Touristsspotname" placeholder="tourists_spot_name" className="input input-bordered" required />
+                                        <input type="text" defaultValue={modifayData.Touristsspotname} name="Touristsspotname" placeholder="tourists_spot_name" className="input input-bordered" required />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
-                                            <span className="label-text">Country name</span>
+                                            <span className="label-text">country_Name</span>
                                         </label>
-                                        <input type="text" name="countryname" placeholder="Enter country_Name" className="input input-bordered" required />
+                                        <input type="text" defaultValue={modifayData.countryname} name="countryname" placeholder="Enter country_Name" className="input input-bordered" required />
                                     </div>
                                 </div>
                                 <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5 mt-5">
                                     <div className="form-control">
                                         <label className="label">
-                                            <span className="label-text">Location</span>
+                                            <span className="label-text">location</span>
                                         </label>
-                                        <input type="text" name="location" placeholder="Enter location" className="input input-bordered" />
+                                        <input type="text" defaultValue={modifayData.location} name="location" placeholder="Enter location" className="input input-bordered" />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Average cost</span>
                                         </label>
-                                        <input type="number" name="average_cost" placeholder="Enter Average_cost" className="input input-bordered" />
+                                        <input type="text" defaultValue={modifayData.average_cost} name="average_cost" placeholder="Enter Average_cost" className="input input-bordered" />
                                     </div>
                                 </div>
                                 <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5 mt-5">
@@ -106,36 +105,36 @@ const Addtorestspost = () => {
                                         <label className="label">
                                             <span className="label-text">Seasonality - like summer, winter</span>
                                         </label>
-                                        <input type="text" name="seasonality" placeholder="Enter easonality - like summer, winter" className="input input-bordered" />
+                                        <input type="text" defaultValue={modifayData.seasonality} name="seasonality" placeholder="Enter easonality - like summer, winter" className="input input-bordered" />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Travel time </span>
                                         </label>
-                                        <input type="text" name="treveltime" placeholder="Inter travel_time " className="input input-bordered" required />
+                                        <input type="text" defaultValue={modifayData.treveltime} name="treveltime" placeholder="Inter travel_time " className="input input-bordered" required />
                                     </div>
                                 </div>
                                 <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5 mt-5">
                                     <div className="form-control">
                                         <label className="label">
-                                            <span className="label-text">Total Visitors PerYear </span>
+                                            <span className="label-text">TotaVisitorsPerYear </span>
                                         </label>
-                                        <input type="text" name="totavisitorsperyear" placeholder="Enter easonality - like summer, winter" className="input input-bordered" />
+                                        <input type="text" defaultValue={modifayData.totavisitorsperyear} name="totavisitorsperyear" placeholder="Enter easonality - like summer, winter" className="input input-bordered" />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Photo URL</span>
                                         </label>
-                                        <input type="text" name="photourl" placeholder="Cofi photo url" className="input input-bordered" required />
+                                        <input type="text" defaultValue={modifayData.photourl} name="photourl" placeholder="Cofi photo url" className="input input-bordered" required />
                                     </div>
                                 </div>
-                              <div className="mt-5">
-                              <label htmlFor="">short description</label><br />
-                                <textarea className=" textarea h-32 mt-5 w-full" name="text_area" placeholder="short description"></textarea>
+                                <div className="mt-5">
+                                    <label htmlFor="">short description</label><br />
+                                    <textarea className=" textarea h-32 mt-5 w-full" defaultValue={modifayData.textArea} name="text_area" placeholder="short description"></textarea>
 
-                              </div>
+                                </div>
                             </div>
-                            <button className="btn text-[#331A15] text-2xl font-rancho btn-outline  mt-5 w-full text-center bg-[#D2B48C]">Add Zones</button>
+                            <button className="btn text-[#331A15] text-2xl font-rancho btn-outline  mt-5 w-full text-center bg-[#D2B48C]">Update torest Zones</button>
                         </form>
                     </div>
                 </div>
@@ -144,4 +143,4 @@ const Addtorestspost = () => {
     );
 };
 
-export default Addtorestspost;
+export default Update;

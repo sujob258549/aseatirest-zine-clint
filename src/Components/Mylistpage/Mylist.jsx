@@ -70,10 +70,10 @@ const Mylist = () => {
                     <table className="table">
                         {/* head */}
                         <thead>
-                            <tr className="text-white">
+                            <tr className="">
                                 <th></th>
                                 <th className="text-xl font-bold">Email</th>
-                                <th className="text-xl font-bold">User Name</th>
+                                <th className="text-xl font-bold">Tourists spotname</th>
                                 <th className="text-xl font-bold">countryname</th>
                                 <th></th>
                             </tr>
@@ -83,8 +83,8 @@ const Mylist = () => {
                             {userTorestUserAdds.map((user, index) => (
                                 <tr key={user._id}>
                                     <th>{index + 1}</th>
-                                    <td>{user.name}</td>
                                     <td>{user.email}</td>
+                                    <td>{user.Touristsspotname}</td>
                                     <td>{user.countryname}</td>
                                     <td>
                                         <div className="flex">
@@ -96,14 +96,14 @@ const Mylist = () => {
                                                 </a>
                                                 <Tooltip
                                                     anchorSelect="#my-anchor-elementes-id"
-                                                    content="Detail"
+                                                    content="Details"
                                                 />
                                             </div>
                                             <div>
                                                 <a className="bg-transparent  p-0" id="my-anchor-elements-id">
-                                                    <button className="btn hover:bg-slate-400  bg-[#3939a3]">
+                                                    <Link to={`/update/${user._id}`} className="btn hover:bg-slate-400  bg-[#3939a3]">
                                                         < IoEyedrop className="  text-white md:text-xl"></IoEyedrop >
-                                                    </button>
+                                                    </Link>
                                                 </a>
                                                 <Tooltip
                                                     anchorSelect="#my-anchor-elements-id"

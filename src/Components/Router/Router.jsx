@@ -9,6 +9,7 @@ import Privateroute from "../Privateroute/Privateroute";
 import Alltorestsport from "../Alltorestsport/Alltorestsport";
 import TorestDetail from "../Alltorestsport/TorestDetail";
 import Mylist from "../Mylistpage/Mylist";
+import Update from "../Update/Update";
 
 
 
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
             {
                 path:'/mylist',
                 element:<Privateroute><Mylist></Mylist></Privateroute>
+            },
+            {
+                path:'/update/:id',
+                element:<Privateroute><Update></Update></Privateroute>,
+                loader: ({params})=> fetch(`http://localhost:3000/torestplase/${params.id}`)
             },
             {
                 path:'/detail/:id',
