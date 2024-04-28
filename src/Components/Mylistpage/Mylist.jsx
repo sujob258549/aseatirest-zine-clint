@@ -1,14 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { CreatAuthContext } from "../Firebase/AuthContext";
-import { FaEye, FaLocationDot, FaPen } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-import { TbDeviceIpadStar } from "react-icons/tb";
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 import { MdDelete } from "react-icons/md";
+import { FaEye } from "react-icons/fa";
+import { IoEyedrop } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Mylist = () => {
     const { user } = useContext(CreatAuthContext);
     const [userTorestUserAdds, setUserTorestAdd] = useState([]);
-
 
     useEffect(() => {
         // Fetch tourist spots data from the backend
@@ -19,61 +20,81 @@ const Mylist = () => {
                 const filteredData = data.filter(item => item.email === user.email);
                 // Set the filtered data to state
                 setUserTorestAdd(filteredData);
-
-
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     }, [user.email]);
 
-    console.log(userTorestUserAdds);
-
     return (
         <div className="w-[90%] mx-auto">
-
             <div className="py-10 md:py-16 lg:py-20">
                 <h2 className="text-xl md:text-5xl text-center font-bold">My torest add list page</h2>
-
                 <div className="overflow-x-auto py-10">
-                        <table className="table">
-                            {/* head */}
-                            <thead>
-                                <tr className="text-white">
-                                    <th></th>
-                                    <th className="text-xl font-bold">Email</th>
-                                    <th className="text-xl font-bold">User Name</th>
-                                    <th className="text-xl font-bold">countryname</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {/* row 1 */}
-                                {
-                                    userTorestUserAdds.map((user, index) => (
-                                        <tr key={user._id}>
-                                            <th>{index + 1}</th>
-                                            <td>{user.name}</td>
-                                            <td>{user.email}</td>
-                                            <td>{user.countryname}</td>
-                                            <td>
-                                                <div>
-                                                <div className="tooltip" data-tip="Detete">
+                    <table className="table">
+                        {/* head */}
+                        <thead>
+                            <tr className="text-white">
+                                <th></th>
+                                <th className="text-xl font-bold">Email</th>
+                                <th className="text-xl font-bold">User Name</th>
+                                <th className="text-xl font-bold">countryname</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* row 1 */}
+                            {userTorestUserAdds.map((user, index) => (
+                                <tr key={user._id}>
+                                    <th>{index + 1}</th>
+                                    <td>{user.name}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.countryname}</td>
+                                    <td>
+                                        <div className="flex">
+                                            <div>
+                                                <a className="bg-transparent  p-0" id="my-anchor-elementes-id">
+                                                    <Link to={`/detail/${user._id}`} className="btn hover:bg-slate-400  bg-[#449aea]">
+                                                        < FaEye className="  text-white md:text-xl"></FaEye>
+                                                    </Link>
+                                                </a>
+                                                <Tooltip
+                                                    anchorSelect="#my-anchor-elementes-id"
+                                                    content="Detail"
+                                                />
+                                            </div>
+                                            <div>
+                                                <a className="bg-transparent  p-0" id="my-anchor-elements-id">
+                                                    <button className="btn hover:bg-slate-400  bg-[#3939a3]">
+                                                        < IoEyedrop className="  text-white md:text-xl"></IoEyedrop >
+                                                    </button>
+                                                </a>
+                                                <Tooltip
+                                                    anchorSelect="#my-anchor-elements-id"
+                                                    content="Update"
+                                                />
+                                            </div>
+                                            <div>
+                                                <a className="bg-transparent  p-0" id="my-anchor-element-id">
                                                     <button  className="btn hover:bg-slate-400  bg-[#ea4744]">
                                                         < MdDelete className="  text-white md:text-xl"></MdDelete>
                                                     </button>
-                                                </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    ))
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-           </div>  
+                                                </a>
+                                                <Tooltip
+                                                    anchorSelect="#my-anchor-element-id"
+                                                    content="Delete"
+                                                />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    )
+    );
 };
 
 export default Mylist;
