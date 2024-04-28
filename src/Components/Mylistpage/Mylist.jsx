@@ -6,6 +6,7 @@ import { MdDelete } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { IoEyedrop } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Mylist = () => {
     const { user } = useContext(CreatAuthContext);
@@ -25,6 +26,41 @@ const Mylist = () => {
                 console.error('Error fetching data:', error);
             });
     }, [user.email]);
+
+
+    // delete functon 
+
+    const handelDelete = (_id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:3000/torestplase/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data.deteteCount > 0)
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+
+
+
+                    })
+                const updatedUsers = userTorestUserAdds.filter(user => user._id !== _id);
+                setUserTorestAdd(updatedUsers);
+            }
+        });
+    }
 
     return (
         <div className="w-[90%] mx-auto">
@@ -76,7 +112,7 @@ const Mylist = () => {
                                             </div>
                                             <div>
                                                 <a className="bg-transparent  p-0" id="my-anchor-element-id">
-                                                    <button  className="btn hover:bg-slate-400  bg-[#ea4744]">
+                                                    <button onClick={() => handelDelete(user._id)} className="btn hover:bg-slate-400  bg-[#ea4744]">
                                                         < MdDelete className="  text-white md:text-xl"></MdDelete>
                                                     </button>
                                                 </a>
