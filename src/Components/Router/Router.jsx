@@ -10,12 +10,8 @@ import Alltorestsport from "../Alltorestsport/Alltorestsport";
 import TorestDetail from "../Alltorestsport/TorestDetail";
 import Mylist from "../Mylistpage/Mylist";
 import Update from "../Update/Update";
-import Bangaldesh from "../Country/Bangaldesh";
-import Thailand from "../Country/Thailand";
-import Cambodia from "../Country/Cambodia";
-import Indonesia from "../Country/Indonesia";
-import Malaysia from "../Country/Malaysia";
-import Vietnam from "../Country/Vietnam";
+import Bangladesh from "../SpicifaiCountry/Bangladesh";
+import Thailand from "../SpicifaiCountry/Thailand";
 
 
 
@@ -41,49 +37,78 @@ const router = createBrowserRouter([
                 path:'/addtorest',
                 element:<Privateroute><Addtorestspost></Addtorestspost></Privateroute>
             },
+
+            // country
+            {
+                path:'/thailand',
+                element:<Privateroute><Thailand></Thailand></Privateroute>,
+                loader:()=> fetch('http://localhost:3000/torestplase')
+               
+            },
+            // {
+            //     path:'/cambodia',
+            //     element:<Privateroute><Cambodia></Cambodia></Privateroute>
+               
+            // },
+            // {
+            //     path:'/indonesia',
+            //     element:<Privateroute><Indonesia></Indonesia></Privateroute>
+               
+            // },
+            // {
+            //     path:'/malaysia',
+            //     element:<Privateroute><Malaysia></Malaysia></Privateroute>
+               
+            // },
+            // {
+            //     path:'/vietname',
+            //     element:<Privateroute><Vietnam></Vietnam></Privateroute>
+               
+            // },
             {
                 path:'/mylist',
                 element:<Privateroute><Mylist></Mylist></Privateroute>
             },
             {
-                path:'/bangladesh',
-                element:<Privateroute><Bangaldesh></Bangaldesh></Privateroute>,
+                path:'/country',
+                element:<Privateroute><Bangladesh></Bangladesh></Privateroute>,
+                loader:()=> fetch('http://localhost:3000/torestplase')
     
             },
-            {
-                path:'/thailand',
-                element:<Privateroute><Thailand></Thailand></Privateroute>
+            // {
+            //     path:'/thailand',
+            //     element:<Privateroute><Thailand></Thailand></Privateroute>
                
-            },
-            {
-                path:'/cambodia',
-                element:<Privateroute><Cambodia></Cambodia></Privateroute>
+            // },
+            // {
+            //     path:'/cambodia',
+            //     element:<Privateroute><Cambodia></Cambodia></Privateroute>
                
-            },
-            {
-                path:'/indonesia',
-                element:<Privateroute><Indonesia></Indonesia></Privateroute>
+            // },
+            // {
+            //     path:'/indonesia',
+            //     element:<Privateroute><Indonesia></Indonesia></Privateroute>
                
-            },
-            {
-                path:'/malaysia',
-                element:<Privateroute><Malaysia></Malaysia></Privateroute>
+            // },
+            // {
+            //     path:'/malaysia',
+            //     element:<Privateroute><Malaysia></Malaysia></Privateroute>
                
-            },
-            {
-                path:'/vietname',
-                element:<Privateroute><Vietnam></Vietnam></Privateroute>
+            // },
+            // {
+            //     path:'/vietname',
+            //     element:<Privateroute><Vietnam></Vietnam></Privateroute>
                
-            },
-            {
+            // },
+             {
                 path:'/update/:id',
                 element:<Privateroute><Update></Update></Privateroute>,
-                loader: ({params})=> fetch(`https://localhost/3000/torestplase/${params.id}`)
+                loader: ({params})=> fetch(`http://localhost:3000/torestplase/${params.id}`)
             },
             {
                 path:'/detail/:id',
                 element:<TorestDetail></TorestDetail>,
-                loader: ({params})=> fetch(`https://localhost/3000/torestplase/${params.id}`)
+                loader: ({params})=> fetch(`http://localhost:3000/torestplase/${params.id}`)
                 
             },
             {

@@ -24,7 +24,7 @@ const Update = () => {
         const textArea = e.target.text_area.value;
         const torestSport = { name, email, Touristsspotname, countryname, location, average_cost, seasonality, treveltime, totavisitorsperyear, photourl, textArea }
 
-        fetch(`https://localhost/3000/torestplase/${modifayData._id}`, {
+        fetch(`http://localhost:3000/torestplase/${modifayData._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

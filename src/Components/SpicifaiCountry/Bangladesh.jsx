@@ -1,32 +1,23 @@
-import { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { TbDeviceIpadStar } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
-
-
-const SixtorestPlese = () => {
-
-    const [torestZones, setTorestZones] = useState([])
-    const [data, setdata] = useState(6)
-    console.log(torestZones)
+const Bangladesh = () => {
+    const bangladeshDatas = useLoaderData();
+    const [filterData, setFilterData] = useState([]); 
 
     useEffect(() => {
-        fetch('http://localhost:3000/torestplase')
-            .then(res => res.json())
-            .then(data => {
-                setTorestZones(data)
-            })
-
-    }, [])
-
+        const singleData = bangladeshDatas.filter(data => data.countryname.toLowerCase() === 'bangladesh');
+        setFilterData(singleData);
+    }, [bangladeshDatas]);
 
     return (
         <div className="py-10 md:py-16 lg:py-20">
             <h2 className="3text-xl md:text-5xl text-center font-bold">Tourists Spots section </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 md:py-16 ">
                 {
-                    torestZones.slice(0 , data).map(torestZone => (
+                    filterData.map(torestZone => (
                         <div data-aos="fade-down" data-aos-duration="5000" key={torestZone.id} className='border-2 transition p-5
                      shadow  rounded-md hover'>
 
@@ -65,6 +56,4 @@ const SixtorestPlese = () => {
     );
 };
 
-
-
-export default SixtorestPlese;
+export default Bangladesh;

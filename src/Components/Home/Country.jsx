@@ -12,7 +12,7 @@ const Country = () => {
                         <h2 className="card-title">Bangladesh</h2>
                         <p>Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges), Meghna  of India on the Bay  and Jamuna r.</p>
                         <div className="card-actions justify-end mt-10 flex-grow">
-                            <Link to={'/bangladesh'} className="btn text-white hover:text-black bg-[#400f0fd9]">Other torest sport</Link>
+                            <Link to={'/country'} className="btn text-white hover:text-black bg-[#400f0fd9]">Other torest sport</Link>
                         </div>
                     </div>
                 </div>

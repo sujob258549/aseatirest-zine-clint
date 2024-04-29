@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import errimg from '../../assets/404/404.gif'
+import errimg from '../../assets/image/404.gif'
 import { FaLeftLong } from 'react-icons/fa6';
 const Errorpage = () => {
     return (

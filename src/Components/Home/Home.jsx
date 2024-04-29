@@ -10,8 +10,9 @@ const Home = () => {
                 <Slider></Slider>
             </div>
 
-            <SixtorestPlese></SixtorestPlese>
+            <SixtorestPlese></SixtorestPlese> 
             <Country></Country>
+
         </div>
     );
 };

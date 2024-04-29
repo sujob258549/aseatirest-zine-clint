@@ -11,7 +11,7 @@ const Alltorestsport = () => {
     console.log(torestZones)
 
     useEffect(() => {
-        fetch('https://localhost/3000/torestplase')
+        fetch('http://localhost:3000/torestplase')
             .then(res => res.json())
             .then(data => {
                 setTorestZones(data)
