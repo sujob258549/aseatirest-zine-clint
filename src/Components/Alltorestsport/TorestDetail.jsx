@@ -15,13 +15,14 @@ const TorestDetail = () => {
             </div>
 
             <div className=" gap-0">
-                <h2 className="font-rancho text-2xl playfair py-2 font-semibold"><span>Tourist sspot name :</span> {detailTorest.Touristsspotname}</h2>
+                <h2 className="font-rancho text-2xl playfair py-2 font-semibold"><span>Country name :</span> {detailTorest.countryname}</h2>
                 <hr />
 
                 <div className=" flex gap-4 py-3 items-center">
 
                     <div className="">
                         <h2 className=" text-[16px]  font-medium rounded-full py-2 md:py-3"> <span className=" lg:pr-16 pr-10 font-semibold">Name </span > -: {detailTorest.name}</h2>
+                        <h2 className=" text-[16px]  font-medium rounded-full py-2 md:py-3"> <span className=" lg:pr-16 pr-10 font-semibold">Tourist spots Name </span > -: {detailTorest.Touristsspotname}</h2>
                         <h2 className="text-[16px]  Color font-medium   rounded-full py-2 md:py-3"> <span className="font-semibold pr-3 lg:pr-[70px]">Email </span> -: {detailTorest.email}</h2>
                         <h2 className=" text-[16px]  tColor  font-medium   rounded-full py-2 md:py-3"> <span className="font-semibold lg:pr-3 pr-[6px]">Average cost </span>-: {detailTorest.average_cost}</h2>
 

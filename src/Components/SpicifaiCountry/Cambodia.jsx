@@ -3,13 +3,13 @@ import { FaLocationDot } from "react-icons/fa6";
 import { TbDeviceIpadStar } from "react-icons/tb";
 import { Link, useLoaderData } from "react-router-dom";
 
-const Thailand = () => {
+const Cambodia = () => {
     const tailandDatas = useLoaderData();
     const [filterDatas, setFilterData] = useState([]); 
     console.log(filterDatas)
 
     useEffect(() => {
-        const singleData = tailandDatas.filter(data => data.countryname.toLowerCase() === 'tailand');
+        const singleData = tailandDatas.filter(data => data.countryname.toLowerCase() === 'cambodia');
         console.log(singleData)
         setFilterData(singleData);
     }, [tailandDatas]);
@@ -58,4 +58,4 @@ const Thailand = () => {
     );
 };
 
-export default Thailand;
+export default Cambodia;

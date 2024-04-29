@@ -12,6 +12,10 @@ import Mylist from "../Mylistpage/Mylist";
 import Update from "../Update/Update";
 import Bangladesh from "../SpicifaiCountry/Bangladesh";
 import Thailand from "../SpicifaiCountry/Thailand";
+import Indonesia from "../SpicifaiCountry/Indonesia";
+import Cambodia from "../SpicifaiCountry/Cambodia";
+import Vietnam from "../SpicifaiCountry/Vietnam";
+import Malaysia from "../SpicifaiCountry/Malaysia";
 
 
 
@@ -45,26 +49,30 @@ const router = createBrowserRouter([
                 loader:()=> fetch('http://localhost:3000/torestplase')
                
             },
-            // {
-            //     path:'/cambodia',
-            //     element:<Privateroute><Cambodia></Cambodia></Privateroute>
+            {
+                path:'/cambodia',
+                element:<Privateroute><Cambodia></Cambodia></Privateroute>,
+                loader:()=> fetch('http://localhost:3000/torestplase')
                
-            // },
-            // {
-            //     path:'/indonesia',
-            //     element:<Privateroute><Indonesia></Indonesia></Privateroute>
+            },
+            {
+                path:'/indonesia',
+                element:<Privateroute><Indonesia></Indonesia></Privateroute>,
+                loader:()=> fetch('http://localhost:3000/torestplase')
                
-            // },
-            // {
-            //     path:'/malaysia',
-            //     element:<Privateroute><Malaysia></Malaysia></Privateroute>
+            },
+            {
+                path:'/malaysia',
+                element:<Privateroute><Malaysia></Malaysia></Privateroute>,
+                loader:()=> fetch('http://localhost:3000/torestplase')
                
-            // },
-            // {
-            //     path:'/vietname',
-            //     element:<Privateroute><Vietnam></Vietnam></Privateroute>
+            },
+            {
+                path:'/vietname',
+                element:<Privateroute><Vietnam></Vietnam></Privateroute>,
+                loader:()=> fetch('http://localhost:3000/torestplase')
                
-            // },
+            },
             {
                 path:'/mylist',
                 element:<Privateroute><Mylist></Mylist></Privateroute>
