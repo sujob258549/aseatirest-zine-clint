@@ -24,7 +24,7 @@ const Addtorestspost = () => {
         const torestSport = { name, email,Touristsspotname, countryname, location,average_cost,seasonality,treveltime,totavisitorsperyear,photourl,textArea }
         console.log(torestSport)
 
-        fetch('http://localhost:3000/torestplase', {
+        fetch('https://localhost/3000/torestplase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
