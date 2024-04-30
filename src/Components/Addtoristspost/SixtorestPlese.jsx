@@ -12,7 +12,7 @@ const SixtorestPlese = () => {
     console.log(torestZones)
 
     useEffect(() => {
-        fetch('https://asea-ture-zone-10.vercel.app/torestplase')
+        fetch('http://localhost:3000/torestplase')
             .then(res => res.json())
             .then(data => {
                 setTorestZones(data)

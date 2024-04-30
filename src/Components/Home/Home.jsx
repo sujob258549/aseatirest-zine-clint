@@ -1,5 +1,6 @@
 import SixtorestPlese from "../Addtoristspost/SixtorestPlese";
 import Country from "./Country";
+import Progerss from "./Progerss";
 import Slider from "./Slider";
 
 
@@ -12,6 +13,7 @@ const Home = () => {
 
             <SixtorestPlese></SixtorestPlese> 
             <Country></Country>
+            <Progerss></Progerss>
 
         </div>
     );

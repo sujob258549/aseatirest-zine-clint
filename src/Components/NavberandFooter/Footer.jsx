@@ -4,9 +4,9 @@ const Footer = () => {
         <div>
             <footer className="footer footer-center p-10 bg-slate-300 text-black ">
                 <aside>
-                    <img className="w-24" src="https://i.ibb.co/zHN77Rj/images-removebg-preview.png" alt="" />
+                    <img className="w-24" src="https://i.ibb.co/h9rjDsJ/download-removebg-preview.png" alt="" />
                     <p className="font-bold">
-                       Sujon Hospitality LTD <br />Our company Start in 1992
+                      Asea travel Zones <br />Disignerby : Sujon
                     </p>
                     <p>Copyright © 2024 - All right reserved</p>
                 </aside>
