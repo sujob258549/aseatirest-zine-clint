@@ -14,7 +14,7 @@ const Mylist = () => {
 
     useEffect(() => {
         // Fetch tourist spots data from the backend
-        fetch('http://localhost:3000/torestplase')
+        fetch('https://asea-ture-zone-10.vercel.app/torestplase')
             .then(res => res.json())
             .then(data => {
                 // Filter the data based on the current user's email address
@@ -41,7 +41,7 @@ const Mylist = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/torestplase/${_id}`, {
+                fetch(`https://asea-ture-zone-10.vercel.app/torestplase/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

@@ -12,3 +12,7 @@ git push -u origin main
 
 
 https://asea-ture-zone-10-nne87y6h3-md-sujon-mias-projects-63442d23.vercel.app/torestplase
+
+
+
+https://asea-ture-zone-10.vercel.app
