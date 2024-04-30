@@ -46,31 +46,31 @@ const router = createBrowserRouter([
             {
                 path:'/thailand',
                 element:<Privateroute><Thailand></Thailand></Privateroute>,
-                loader:()=> fetch('http://localhost:3000/torestplase')
+                loader:()=> fetch('https://asea-ture-zone-10.vercel.app/torestplase')
                
             },
             {
                 path:'/cambodia',
                 element:<Privateroute><Cambodia></Cambodia></Privateroute>,
-                loader:()=> fetch('http://localhost:3000/torestplase')
+                loader:()=> fetch('https://asea-ture-zone-10.vercel.app/torestplase')
                
             },
             {
                 path:'/indonesia',
                 element:<Privateroute><Indonesia></Indonesia></Privateroute>,
-                loader:()=> fetch('http://localhost:3000/torestplase')
+                loader:()=> fetch('https://asea-ture-zone-10.vercel.app/torestplase')
                
             },
             {
                 path:'/malaysia',
                 element:<Privateroute><Malaysia></Malaysia></Privateroute>,
-                loader:()=> fetch('http://localhost:3000/torestplase')
+                loader:()=> fetch('https://asea-ture-zone-10.vercel.app/torestplase')
                
             },
             {
                 path:'/vietname',
                 element:<Privateroute><Vietnam></Vietnam></Privateroute>,
-                loader:()=> fetch('http://localhost:3000/torestplase')
+                loader:()=> fetch('https://asea-ture-zone-10.vercel.app/torestplase')
                
             },
             {
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
             {
                 path:'/country',
                 element:<Privateroute><Bangladesh></Bangladesh></Privateroute>,
-                loader:()=> fetch('http://localhost:3000/torestplase')
+                loader:()=> fetch('https://asea-ture-zone-10.vercel.app/torestplase')
     
             },
             // {
@@ -111,12 +111,12 @@ const router = createBrowserRouter([
              {
                 path:'/update/:id',
                 element:<Privateroute><Update></Update></Privateroute>,
-                loader: ({params})=> fetch(`http://localhost:3000/torestplase/${params.id}`)
+                loader: ({params})=> fetch(`https://asea-ture-zone-10.vercel.app/torestplase/${params.id}`)
             },
             {
                 path:'/detail/:id',
                 element:<TorestDetail></TorestDetail>,
-                loader: ({params})=> fetch(`http://localhost:3000/torestplase/${params.id}`)
+                loader: ({params})=> fetch(`https://asea-ture-zone-10.vercel.app/torestplase/${params.id}`)
                 
             },
             {

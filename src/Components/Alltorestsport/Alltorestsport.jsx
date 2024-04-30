@@ -11,7 +11,7 @@ const Alltorestsport = () => {
     console.log(torestZones)
 
     useEffect(() => {
-        fetch('http://localhost:3000/torestplase')
+        fetch('https://asea-ture-zone-10.vercel.app/torestplase')
             .then(res => res.json())
             .then(data => {
                 setTorestZones(data)
@@ -31,12 +31,12 @@ const Alltorestsport = () => {
                      shadow  rounded-md hover'>
 
                             <h2 className='text-xl px-5 font-semibold'>{torestZone.estate_title}</h2>
-                            <img className=' w-full  hover:transform hover:scale-110 duration-500 hover:rotate-6' src={torestZone.photourl} alt="" />
+                            <img className=' w-full h-56 hover:transform hover:scale-110 duration-500 hover:rotate-6' src={torestZone.photourl} alt="" />
                             <div className="py-5">
                                 <p className='px-5'><span className="font-bold">Compani Name : </span> {torestZone.countryname}</p>
                                 <p className=' px-5 py-2'><span className="font-bold">Average cost: </span> {torestZone.average_cost}</p>
                                 <p className=' px-5 py-2'><span className="font-bold">Seasonality: </span> {torestZone.seasonality}</p>
-                                <p className=' px-5 py-2'><span className="font-bold">Discribtion: </span> {torestZone.textArea}</p>
+                                <p className=' px-5 py-2'><span className="font-bold">Discribtion: </span> {torestZone.textArea.slice(0, 40)}</p>
 
                             </div>
                             <hr />
@@ -51,7 +51,7 @@ const Alltorestsport = () => {
                                     <p>{torestZone.location}</p>
                                 </div>
                             </div>
-                            <div className="flex justify-end mr-5 mb-10">
+                            <div className="flex justify-end mr-5">
                                 <Link to={`/detail/${torestZone._id}`} className="btn w-40   text-right text-white bg-[#400f0fd9] flex items-center hover:text-black"><TbDeviceIpadStar className="text-xl font-bold"></TbDeviceIpadStar> Vew detail</Link>
                             </div>
                             
