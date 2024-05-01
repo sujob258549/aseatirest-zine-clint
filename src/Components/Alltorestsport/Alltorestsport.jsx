@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
+import { RiArrowDownSFill } from "react-icons/ri";
 import { TbDeviceIpadStar } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
@@ -15,10 +16,18 @@ const Alltorestsport = () => {
         fetch('https://asea-ture-zone-10.vercel.app/torestplase')
             .then(res => res.json())
             .then(data => {
-                setTorestZones(data)
+                setTorestZones(data);
             })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
-    }, [])
+    const handleSort = () => {
+        const sortedSpot = [...torestZones].sort((a, b) => a.average_cost - b.average_cost);
+        setTorestZones(sortedSpot);
+    };
+
 
 
     return (
@@ -33,17 +42,23 @@ const Alltorestsport = () => {
                         delaySpeed={100}
                         deleteSpeed={100}
                         typeSpeed={100}
-                        autoStart= {true}
+                        autoStart={true}
                         words={['Tourists Spots section']}
-                    
-                /></h2>
+
+                    /></h2>
 
                 <div className="flex justify-center pt-10">
-                    <select className="select w-full max-w-xs bg-slate-400 text-white">
-                        <option disabled selected>Short Average cost</option>
-                        <option>Assanding</option>
-                        <option>Desanding</option>
-                    </select>
+
+                    <div className="flex justify-center pt-10">
+                    <div className="dropdown dropdown-bottom dropdown-center">
+                        <div tabIndex={0} role="button" className="ps-10 pe-5 py-2 bg-[#ff0066] m-1 font-semibold text-white flex jusc rounded-lg items-center gap-[25px]">
+                            Sort By <RiArrowDownSFill />
+                        </div>
+                        <ul tabIndex={0} className="dropdown-content z-[1] menu px-8 py-2 shadow-xl bg-base-100 border ml-1 rounded-lg hover:bg-[#ff0066] hover:text-white duration-200 cursor-pointer">
+                            <li onClick={handleSort} className="text-nowrap font-semibold">Average Cost</li>
+                        </ul>
+                    </div>
+                </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 md:py-16 ">
                     {
