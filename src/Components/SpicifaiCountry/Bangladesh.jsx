@@ -2,6 +2,7 @@ import  { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { TbDeviceIpadStar } from "react-icons/tb";
 import { Link, useLoaderData } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const Bangladesh = () => {
     const bangladeshDatas = useLoaderData();
@@ -14,7 +15,9 @@ const Bangladesh = () => {
 
     return (
         <div className="py-10 md:py-16 lg:py-20 w-[90%] mx-auto">
-            <h2 className="3text-xl md:text-5xl text-center font-bold">Tourists Spots section </h2>
+          <Typewriter>
+          <h2 className="3text-xl md:text-5xl text-center font-bold">Tourists Spots section </h2>
+          </Typewriter>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 md:py-16 ">
                 {
                     filterData.map(torestZone => (

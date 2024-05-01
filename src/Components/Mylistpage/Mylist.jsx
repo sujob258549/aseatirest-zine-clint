@@ -7,6 +7,7 @@ import { FaEye } from "react-icons/fa";
 import { IoEyedrop } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Typewriter } from "react-simple-typewriter";
 
 const Mylist = () => {
     const { user } = useContext(CreatAuthContext);
@@ -65,7 +66,21 @@ const Mylist = () => {
     return (
         <div className="w-[90%] mx-auto">
             <div className="py-10 md:py-16 lg:py-20">
-                <h2 className="text-xl md:text-5xl text-center font-bold">My torest add list page</h2>
+               
+                <h2 className="text-xl md:text-5xl text-center font-bold">
+                <Typewriter
+                        loop
+                        cursor
+                        cursorStyle='...'
+                        delaySpeed={100}
+                        deleteSpeed={100}
+                        typeSpeed={100}
+                        autoStart= {true}
+                        words={['My torest add list page']}
+                    
+                />
+                </h2>
+              
                 <div className="overflow-x-auto py-10">
                     <table className="table">
                         {/* head */}

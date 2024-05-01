@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { TbDeviceIpadStar } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 
 
@@ -22,7 +23,19 @@ const SixtorestPlese = () => {
 
     return (
         <div className="py-10 md:py-16 lg:py-20">
-            <h2 className="3text-xl md:text-5xl text-center font-bold">Tourists Spots section </h2>
+            <h2 className="3text-xl md:text-5xl text-center font-bold">
+            <Typewriter
+                        loop
+                        cursor
+                        cursorStyle='...'
+                        delaySpeed={100}
+                        deleteSpeed={100}
+                        typeSpeed={100}
+                        autoStart= {true}
+                        words={['Tourists Spots section']}
+                    
+                />
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 md:py-16 ">
             {
                     torestZones.slice(0, 6).map(torestZone => (

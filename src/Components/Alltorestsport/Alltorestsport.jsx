@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { TbDeviceIpadStar } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 
 
@@ -23,9 +24,22 @@ const Alltorestsport = () => {
     return (
         <div className="w-[90%] mx-auto">
             <div className="py-10 md:py-16 lg:py-20">
-                <h2 className="text-xl md:text-5xl text-center font-bold">Tourists Spots section </h2>
+
+                <h2 className="text-xl md:text-5xl text-center font-bold">
+                    <Typewriter
+                        loop
+                        cursor
+                        cursorStyle='...'
+                        delaySpeed={100}
+                        deleteSpeed={100}
+                        typeSpeed={100}
+                        autoStart= {true}
+                        words={['Tourists Spots section']}
+                    
+                /></h2>
+
                 <div className="flex justify-center pt-10">
-                    <select  className="select w-full max-w-xs bg-slate-400 text-white">
+                    <select className="select w-full max-w-xs bg-slate-400 text-white">
                         <option disabled selected>Short Average cost</option>
                         <option>Assanding</option>
                         <option>Desanding</option>
