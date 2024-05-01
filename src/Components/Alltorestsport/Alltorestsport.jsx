@@ -23,44 +23,51 @@ const Alltorestsport = () => {
     return (
         <div className="w-[90%] mx-auto">
             <div className="py-10 md:py-16 lg:py-20">
-            <h2 className="text-xl md:text-5xl text-center font-bold">Tourists Spots section </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 md:py-16 ">
-                {
-                    torestZones.map(torestZone => (
-                        <div data-aos="fade-down" data-aos-duration="5000" key={torestZone.id} className='border-2 transition p-5
+                <h2 className="text-xl md:text-5xl text-center font-bold">Tourists Spots section </h2>
+                <div className="flex justify-center pt-10">
+                    <select  className="select w-full max-w-xs bg-slate-400 text-white">
+                        <option disabled selected>Short Average cost</option>
+                        <option>Assanding</option>
+                        <option>Desanding</option>
+                    </select>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 md:py-16 ">
+                    {
+                        torestZones.map(torestZone => (
+                            <div data-aos="fade-down" data-aos-duration="5000" key={torestZone.id} className='border-2 transition p-5
                      shadow  rounded-md hover'>
 
-                            <h2 className='text-xl px-5 font-semibold'>{torestZone.estate_title}</h2>
-                            <img className=' w-full h-56 hover:transform hover:scale-110 duration-500 hover:rotate-6' src={torestZone.photourl} alt="" />
-                            <div className="py-5">
-                                <p className='px-5'><span className="font-bold">Compani Name : </span> {torestZone.countryname}</p>
-                                <p className=' px-5 py-2'><span className="font-bold">Average cost: </span> {torestZone.average_cost}</p>
-                                <p className=' px-5 py-2'><span className="font-bold">Seasonality: </span> {torestZone.seasonality}</p>
-                                <p className=' px-5 py-2'><span className="font-bold">Discribtion: </span> {torestZone.textArea.slice(0, 40)}</p>
-
-                            </div>
-                            <hr />
-                            <div className='flex justify-end py-8 px-5'>
-                                <div className='flex gap-3'>
-
-
+                                <h2 className='text-xl px-5 font-semibold'>{torestZone.estate_title}</h2>
+                                <img className=' w-full h-56 hover:transform hover:scale-110 duration-500 hover:rotate-6' src={torestZone.photourl} alt="" />
+                                <div className="py-5">
+                                    <p className='px-5'><span className="font-bold">Compani Name : </span> {torestZone.countryname}</p>
+                                    <p className=' px-5 py-2'><span className="font-bold">Average cost: </span> {torestZone.average_cost}</p>
+                                    <p className=' px-5 py-2'><span className="font-bold">Seasonality: </span> {torestZone.seasonality}</p>
+                                    <p className=' px-5 py-2'><span className="font-bold">Discribtion: </span> {torestZone.textArea.slice(0, 40)}</p>
 
                                 </div>
-                                <div className=' items-center flex gap-2'>
-                                    <FaLocationDot className='text-xl '> </FaLocationDot>
-                                    <p>{torestZone.location}</p>
+                                <hr />
+                                <div className='flex justify-end py-8 px-5'>
+                                    <div className='flex gap-3'>
+
+
+
+                                    </div>
+                                    <div className=' items-center flex gap-2'>
+                                        <FaLocationDot className='text-xl '> </FaLocationDot>
+                                        <p>{torestZone.location}</p>
+                                    </div>
                                 </div>
+                                <div className="flex justify-end mr-5">
+                                    <Link to={`/detail/${torestZone._id}`} className="btn w-40   text-right text-white bg-[#400f0fd9] flex items-center hover:text-black"><TbDeviceIpadStar className="text-xl font-bold"></TbDeviceIpadStar> Vew detail</Link>
+                                </div>
+
                             </div>
-                            <div className="flex justify-end mr-5">
-                                <Link to={`/detail/${torestZone._id}`} className="btn w-40   text-right text-white bg-[#400f0fd9] flex items-center hover:text-black"><TbDeviceIpadStar className="text-xl font-bold"></TbDeviceIpadStar> Vew detail</Link>
-                            </div>
-                            
-                        </div>
-                    ))
-                }
+                        ))
+                    }
+                </div>
+                <div className="flex justify-center"> <Link to={`/alltorestaport`} className="btn w-40   text-right text-white bg-[#400f0fd9] flex items-center hover:text-black"><TbDeviceIpadStar className="text-xl font-bold"></TbDeviceIpadStar> Vew detail</Link></div>
             </div>
-           <div className="flex justify-center"> <Link to={`/alltorestaport`} className="btn w-40   text-right text-white bg-[#400f0fd9] flex items-center hover:text-black"><TbDeviceIpadStar className="text-xl font-bold"></TbDeviceIpadStar> Vew detail</Link></div>
-        </div>
         </div>
     );
 };

@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 const SixtorestPlese = () => {
 
     const [torestZones, setTorestZones] = useState([])
-    const [data, setdata] = useState(6)
     console.log(torestZones)
 
     useEffect(() => {
@@ -26,7 +25,7 @@ const SixtorestPlese = () => {
             <h2 className="3text-xl md:text-5xl text-center font-bold">Tourists Spots section </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 md:py-16 ">
             {
-                    torestZones.map(torestZone => (
+                    torestZones.slice(0, 6).map(torestZone => (
                         <div data-aos="fade-down" data-aos-duration="5000" key={torestZone.id} className='border-2 transition p-5
                      shadow  rounded-md hover'>
 
